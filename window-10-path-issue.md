@@ -35,3 +35,4 @@ $ cmd
 
 그 후에 다시 원래 하려고 했던 명령어를 적용한다.
 
+[출처](https://medium.com/@jagatjyoti.1si13cs040/npm-g-install-npm-package-not-working-as-desired-why-why-why-19795abf0b59)
