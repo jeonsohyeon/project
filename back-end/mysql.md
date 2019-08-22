@@ -2,7 +2,7 @@
 
 ## 로그인
 
-```text
+```bash
 mysql -uroot -p
 ```
 
