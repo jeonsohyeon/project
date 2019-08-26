@@ -32,3 +32,26 @@ flush privileges;
 
 [원문 link](https://www.rosehosting.com/blog/create-a-new-mysql-user-and-grant-permissions-to-mysql-database/) [추가 link](https://link2me.tistory.com/431)
 
+{% tabs %}
+{% tab title="Basic" %}
+```text
+show databases;
+use [DB Name];
+show tables;
+desc [table Name];
+\c //취소
+```
+{% endtab %}
+
+{% tab title="More" %}
+```text
+select user,host from mysql.user; //등록된 모든 유저 확인
+select user(); //현재 접속 유저
+select version(); //mysql 버전
+select current_date;
+select now();
+
+```
+{% endtab %}
+{% endtabs %}
+
