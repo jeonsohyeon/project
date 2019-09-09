@@ -37,45 +37,5 @@ http://localhost:3000/ 접속
 
 * /view/index.ejs 에 버튼 클릭시 fetch 요청이 발생하여 result 를 출력하도록 설정
 
-```text
-<button class="ajaxsend">AJAX SEND</button>
-<div class="result"></div>
-<script>
-  const apiKey = '430156241533f1d058c603178cc3ca0e';
-  const dailyBoxOffice = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${apiKey}`;
-  document.querySelector('.ajaxsend').addEventListener('click', function() {
-    let movieAPI = `${dailyBoxOffice}&targetDt=20190904`;
-    fetchURL(movieAPI, findRank);
-  });
-  function fetchURL(url, callback) {
-      fetch(url).then(function(response) {
-        response.text().then(function(data) {
-          callback(JSON.parse(data));
-        });
-      });
-    }
-    
-  function findRank(data) {
-    let movieList = data.boxOfficeResult.dailyBoxOfficeList;
-    let length = movieList.length;
-    let ranking = `<ol>`;
-    for (let i = 0; i < length; i++) {
-      ranking += `<li>
-        <div>
-          <span>${i + 1}</span>
-          ${movieList[i].rankOldAndNew === 'NEW' ? `<em>신규진입</em>` : ''}
-          <strong class="tit_movie" data-moviecd="${movieList[i].movieCd}">${movieList[i].movieNm}</strong>
-          <p>${movieList[i].openDt} 개봉</p>
-          <p>오늘 ${movieList[i].audiCnt} 명 관람</p>
-          <p>누적 관객 ${movieList[i].audiAcc} 명</p>
-          <p>전일대비 ${movieList[i].rankInten > 0 ? parseInt(movieList[i].rankInten) + ' 상승' : parseInt(movieList[i].rankInten) + ' 하락'}</p>
-        </div>
-      </li>`;
-    }
-    ranking += `</ol>`;
-    document.querySelector('.result').innerHTML = ranking;
-  }
-```
-
 
 
