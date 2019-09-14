@@ -9,6 +9,7 @@ description: webpack-simple + sass + vue-router + axios
 #### 설정
 
 * webpack-simple 템플릿으로 기본 개발환경 셋팅\(sass 사용 : Y\)
+* npm audit fix 로 보안취약점을 가진 모듈 업데이트
 * 모듈 추가 설치
   * vue-router
   * axios
@@ -18,9 +19,10 @@ vue init webpack-simple [project name]
 cd [project name]
 npm i
 npm i --dev vue-router axios
+npm audit fix --force
 ```
 
-* **`main.js`** 에서 vue-router 사용 가능하게 수정 
+* **`/src/main.js`** 에서 vue-router 사용 가능하게 수정 
 
 ```text
 import Vue from 'vue';
@@ -38,7 +40,7 @@ new Vue({
 
 ```
 
-* **`App.vue`** 에서 router 로 보여질 수 있도록 수정
+* **`/src/App.vue`** 에서 router 로 보여질 수 있도록 수정
 
 ```text
 <template>
@@ -120,5 +122,46 @@ use: ['vue-style-loader', 'css-loader', 'sass-loader', 'sass-loader?indentedSynt
 },
 ```
 
+### axios 통신
 
+#### 사용
+
+```text
+<template>
+<div>
+  <img src="@/assets/logo.png" alt="logo">
+  <p>{{ msg }} </p>
+  <button @click="getAxiosData()">Axios Test</button>
+  <br/>
+  <br/>
+  <div class="result">{{ result }}</div>
+</div>
+</template>
+<script>
+const axios = require('axios');
+export default {
+  name: 'IndexPage',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      result: ['axios test']
+    }
+  },
+  methods: {
+    getAxiosData() {
+      axios.get('https://jsonplaceholder.typicode.com/todos/1')
+      .then((response) => {
+        this.result = response.data;
+      }, (error) => {
+        this.result = error;
+      });
+    }
+  }
+}
+</script>
+```
+
+### Result
+
+[link](https://github.com/jeonsohyeon/setting/tree/master/project-ws)
 
