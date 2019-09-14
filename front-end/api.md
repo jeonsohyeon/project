@@ -10,7 +10,7 @@ description: 영화 API 활용하여 일별 박스오피스를 출력해본다.
 
 ## 2. 데이터 요청
 
- Request URL 구조 : **기본 요청 URL** + **?key=\[API Key\]** + &params=value
+Request URL 구조 : **기본 요청 URL** + **?key=\[API Key\]** + ¶ms=value
 
 ```text
 ex)
@@ -36,6 +36,4 @@ http://localhost:3000/ 접속
 ### 나. FETCH 요청
 
 * /view/index.ejs 에 버튼 클릭시 fetch 요청이 발생하여 result 를 출력하도록 설정
-
-
 

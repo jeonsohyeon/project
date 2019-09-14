@@ -21,3 +21,7 @@
 
 * [window 10 path issue](issue/window-10-path-issue.md)
 
+## Tip
+
+* [vue-cli2 webpack-simple project setting](tip/vue.js.md)
+
