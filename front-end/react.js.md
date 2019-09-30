@@ -253,5 +253,94 @@ class HelloWorld extends React.Component {
 <input type="checkbox" checked/> //생략 시 true 로 간주
 ```
 
+## 상태\(state\)
+
+React 컴포넌트에 데이터를 저장하고 변경에 따라 자동으로 뷰를 갱신하도록 하는 핵심 개념.
+
+### 초기 상태 설정
+
+#### 조건
+
+* ES6 Class **생성자 안에서** this.state 로 선언
+* this.state 는 반드시 객체여야 함
+* super\(props\) 로 속성을 전달해야 함
+
+```text
+class test extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            stateName = value
+        }
+    }
+    render(){
+        return {this.state.stateName}
+    }
+}
+```
+
+### 상태 수정
+
+#### this.setState\(data, callback\)
+
+일반적으로 이벤트 핸들러, 데이터 수신/갱신 콜백 함수에서 호출해서 사용한다. `setState`  는 `render()` 를 실행시킨다.
+
+{% hint style="info" %}
+`this.state` : 변경 가능 / 해당 컴포넌트 자체에서 정의
+
+`this.props` : 변경 불가 / 부모 컴포넌트에서 전달 / 정적인 상태로 유지
+{% endhint %}
+
+```text
+class test extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            stateName = value
+        }
+        this.init() //valueChange 발생
+    }
+    init(){
+        this.state.stateName = valueChange
+    }
+    render(){
+        return {this.state.stateName}
+    }
+}
+ReactDOM.render(<test/>, document.getElementById('app'))
+```
+
+### 상태 비저장\(stateless\)
+
+속성을 전달받아 처리하는 것. 예측가능하므로 많이 사용할 수록 좋다.
+
+함수만으로 작성되는 상태비저장 컴포넌트는 라이프사이클 메소드를 사용할 수 없다.
+
+```text
+function link(props){
+    return <a href={prop.href}>{prop.text}</a>
+}
+ReactDOM.render(
+    <link text='value' href='http://google.com'/>,
+    document.getElementById('app')
+)
+```
+
+## 이벤트
+
+* mounting : 한번만 실행, 리액트엘리먼트를 DOM 노드에 추가 시 발생
+  * `componentWillMount()` : DOM 삽입 전
+  * `componentDidMount()` : DOM 삽입/렌더링 완료 후
+    * DOM 요소 접근 가
+* updating : 여러번 실행, 속성/상태 변경시 리액트엘리먼트 갱신 시 발생
+  * `componentWillReceiveProps(nextProps)` : 속성 받기전
+  * `shouldComponentUpdate(nextProps, nextState)` : 갱신조건 정의, 재렌더링 최적화
+  * `componentWillUpdate(nextProps, nextState)` : 갱신 직전
+  * `componentDidUpdate(prevProps, prevState)` : 갱신 후
+* unmounting : 한번만 실행, 리액트엘리먼트를 DOM에서 제거 시 발생
+  * `componentWillUnmount()` : DOM 제거 전
+
+
+
 
 
