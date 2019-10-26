@@ -10,7 +10,6 @@
 ## Front-end
 
 * [Vue.js](front-end/vue.js.md)
-* [React.js](front-end/react.js.md)
 * [API 활용](front-end/api.md)
 
 ## Back-end
@@ -25,4 +24,9 @@
 ## Tip
 
 * [vue-cli2 webpack-simple project setting](tip/vue.js.md)
+
+## React.js
+
+* [React.js](react.js/react.js.md)
+* [Coding](react.js/coding.md)
 
