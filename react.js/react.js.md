@@ -16,7 +16,7 @@ let link = React.createElement('a', {href:'http://google.com'}, 'link google');
 ```
 
 * 사용자 정의의 컴포넌트 클래스\(=컴포넌트\)를 생성하는 경우
-  * 재사용 가능한 UI를 만들기 위해서 사
+  * 재사용 가능한 UI를 만들기 위해서 사용
 
 {% hint style="danger" %}
 컴포넌트 클래스를 구현할 때는 render\(\) 메서드가 반드시 필요하고, React 엘리먼트를 반환 해야 한다.
@@ -144,7 +144,7 @@ let link = <a href="http://google.com">link google</a>
 ReactDOM.render(link, document.getElementById('app');
 ```
 
-* 컴포넌트 렌더
+* 컴포넌트 렌더링
 
 ```text
 class HelloWorld extends React.Component {
@@ -324,6 +324,19 @@ ReactDOM.render(
     <link text='value' href='http://google.com'/>,
     document.getElementById('app')
 )
+```
+
+#### DefaultProps
+
+사용자 정의 값이 누락된 경우 기본값 사용
+
+```text
+class [className] extends React.Component {
+    ...
+}
+[className].defaultProps = {
+    [propsName] : [value]
+}
 ```
 
 ## 이벤트

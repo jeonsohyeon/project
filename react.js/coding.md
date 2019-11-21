@@ -48,5 +48,16 @@ class Button extends React.Component {
 
 * 자식에게 속성을 전달할 때 같은 이름을 사용하면 서로 다른 컴포넌트에서 데이터가 관련되어 있다고 유추할 수 있다.
 
+### propTypes
 
+* 기본 속성 타입 설정. 15.5 부터 별도 [라이브러리](https://www.npmjs.com/package/prop-types)로 분리.
+
+```text
+import PropTypes from 'prop-types';
+InputText.propTypes = {
+  placeholder : PropTypes.string,
+  value : PropTypes.string,
+  title : PropTypes.string
+}
+```
 

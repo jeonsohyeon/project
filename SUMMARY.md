@@ -29,4 +29,5 @@
 
 * [React.js](react.js/react.js.md)
 * [Coding](react.js/coding.md)
+* [learning react](learning-react.md)
 
