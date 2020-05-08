@@ -27,7 +27,8 @@
 
 ## React.js
 
-* [React.js](react.js/react.js.md)
+* [React.js](react.js/react.js/README.md)
+  * [React Hook](react.js/react.js/react-hook.md)
 * [Coding](react.js/coding.md)
 * [learning react](learning-react.md)
 
