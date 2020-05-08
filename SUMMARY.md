@@ -24,6 +24,7 @@
 ## Tip
 
 * [vue-cli2 webpack-simple project setting](tip/vue.js.md)
+* [Gulp4 project setting](tip/gulp4-project-setting.md)
 
 ## React.js
 
